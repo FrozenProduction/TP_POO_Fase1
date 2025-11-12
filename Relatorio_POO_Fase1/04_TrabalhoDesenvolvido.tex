@@ -1,0 +1,58 @@
+\section{Trabalho Desenvolvido}
+
+Este capítulo detalha a solução desenhada e implementada para a Fase 1, justificando as decisões tomadas com base nos requisitos do enunciado e nos conceitos teóricos do capítulo anterior.
+
+\subsection{Análise e Especificação}
+
+A primeira etapa consistiu na análise do problema e no desenho da arquitetura geral da solução.
+
+\subsubsection{Requisitos}
+Com base no tema "Gestão de jardim zoológico", foram identificados os seguintes requisitos essenciais (palavras-chave) para a Fase 1:
+\begin{itemize}
+    \item Gestão de **animais** e das suas **informações**.
+    \item Gestão de um **calendário** de tarefas.
+    \item Definição de tarefas específicas: **alimentação** (com **tipos de comida**), **assistência veterinária**, **limpeza de jaulas** e **espetáculos**.
+    \item Gestão da venda de **bilhetes**.
+\end{itemize}
+
+\subsubsection{Arquitetura da Solução}
+Para cumprir o requisito de "Reutilização de código através de bibliotecas (DLL)", a solução foi dividida em dois projetos:
+\begin{itemize}
+    \item \textbf{Zoologico.Core}: Um projeto do tipo "Biblioteca de Classes" (.dll) que contém toda a lógica de negócio, incluindo as classes de animais, tarefas e a classe principal de gestão.
+    \item \textbf{Zoologico.App}: Um projeto "Aplicação de Consola" (.exe) que serve como "Aplicação demonstradora". Este projeto adiciona uma referência ao \texttt{Zoologico.Core} para poder instanciar e testar as suas classes.
+\end{itemize}
+Esta separação garante um baixo acoplamento e uma clara separação de responsabilidades.
+
+\subsubsection{Modelação (Diagrama de Classes)}
+O desenho da solução foi modelado num diagrama de classes UML, conforme exigido. A Figura \ref{fig:diagrama_classes} ilustra as principais classes e as suas relações de herança e associação.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{diagrama_classes.png}
+    \caption{Diagrama de Classes UML da solução.}
+    \label{fig:diagrama_classes}
+    \small{\textit{Fonte: Ficheiro \texttt{DiagramaPOO.cd} do projeto.}}
+\end{figure}
+
+\subsection{Implementação e Decisões de Desenho}
+
+A implementação focou-se na aplicação correta dos pilares da POO para garantir uma solução robusta e extensível.
+
+\subsubsection{Abstração (Animal e Tarefa)}
+Decidiu-se que nem \texttt{Animal} nem \texttt{Tarefa} deveriam ser instanciados diretamente. Definiu-se a classe \texttt{Animal} como \textit{abstract}, pois um "animal" genérico não existe; o que existe são mamíferos, aves, etc. Esta classe define métodos abstratos como \texttt{GetInformacao()}, forçando as classes filhas a implementá-los.
+
+O mesmo princípio foi aplicado à classe \texttt{Tarefa}. Ela define o que é comum a todas as tarefas (uma data e um estado de conclusão), mas a lógica de \texttt{Executar()} é específica de cada subtipo.
+
+\subsubsection{Herança (Animais e Tipos de Tarefa)}
+A herança foi usada para criar especializações. As classes \texttt{Mamifero} e \texttt{Ave} herdam de \texttt{Animal}, reutilizando as propriedades \texttt{Nome} e \texttt{Idade}, mas implementando de forma única o método \texttt{GetInformacao()}.
+
+De igual modo, as classes \texttt{Alimentacao}, \texttt{LimpezaJaula}, \texttt{AssistenciaVeterinaria} e \texttt{Espetaculo} herdam de \texttt{Tarefa}, partilhando o construtor base e as suas propriedades.
+
+\subsubsection{Polimorfismo (Gestão de Tarefas)}
+O pilar do polimorfismo é central na gestão do zoológico. A classe \texttt{Zoologico} gere um \texttt{List<Tarefa>} (o "calendário"). No método \texttt{ExecutarTarefasPendentes()}, o sistema itera sobre esta lista e invoca o método \texttt{t.Executar()}. Graças ao polimorfismo, o sistema executa a versão correta do método (\textit{override}) para cada objeto, seja ele \texttt{Alimentacao} ou \texttt{LimpezaJaula}, sem necessidade de verificar o seu tipo específico.
+
+\subsubsection{Encapsulamento (Proteção de Dados)}
+O encapsulamento foi aplicado para proteger o estado interno dos objetos. Na classe \texttt{Animal}, os atributos \texttt{nome} e \texttt{dataNascimento} são \textit{private}. O acesso é controlado por propriedades \textit{public}, como \texttt{Nome} (que permite leitura e escrita) e \texttt{Idade} (que permite apenas leitura e calcula o valor).
+
+\subsubsection{Métodos de Classe (Static)}
+Para o requisito "bilhetes", decidiu-se que o número total de bilhetes vendidos é uma informação global do zoológico, e não de uma instância particular. Para tal, usou-se um atributo \textit{private static int totalBilhetesVendidos} na classe \texttt{Zoologico}. Os métodos \texttt{VenderBilhete()} e \texttt{GetTotalBilhetesVendidos()} foram implementados como \textit{public static}, permitindo a sua invocação diretamente a partir da classe (\texttt{Zoo.VenderBilhete()}).

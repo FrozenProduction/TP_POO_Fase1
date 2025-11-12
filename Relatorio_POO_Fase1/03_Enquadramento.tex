@@ -1,0 +1,21 @@
+\section{Enquadramento Teórico}
+
+Neste capítulo são revistos os fundamentos teóricos do Paradigma de Programação Orientada a Objetos (POO), que constituem a base metodológica sobre a qual este projeto foi desenvolvido. A correta aplicação destes conceitos é um dos objetivos centrais do trabalho.
+
+\subsection{Paradigma de Programação Orientada a Objetos}
+
+A POO é um paradigma de programação baseado no conceito de "objetos", que podem conter dados (atributos) e código (métodos). O objetivo é modelar o \textit{software} de uma forma mais próxima da realidade, permitindo uma maior reutilização de código, flexibilidade e facilidade de manutenção. Este paradigma assenta em quatro pilares fundamentais, descritos de seguida.
+
+\subsection{Pilares da POO}
+
+\subsubsection{Abstração}
+A abstração consiste em focar-se nos aspetos essenciais de uma entidade, ignorando os detalhes supérfluos. Em C\#, isto é frequentemente implementado através de classes abstratas (\textit{abstract class}) ou interfaces. Uma classe abstrata define um "contrato" do que uma classe deve ser, mas não pode ser instanciada diretamente, obrigando outras classes a herdar dela.
+
+\subsubsection{Encapsulamento}
+O encapsulamento é o mecanismo que restringe o acesso direto aos dados de um objeto, protegendo-os de modificações indevidas. Os dados (atributos) são definidos como privados (\textit{private}) e o acesso a eles é controlado através de métodos públicos (\textit{public}), como propriedades (\textit{getters} e \textit{setters}).
+
+\subsubsection{Herança}
+A herança permite que uma classe (subclasse ou classe filha) adquira os atributos e métodos de outra classe (superclasse ou classe pai). Isto promove a reutilização de código e a criação de hierarquias lógicas. A classe filha pode especializar a classe pai, adicionando novos métodos ou modificando (através de \textit{override}) os existentes.
+
+\subsubsection{Polimorfismo}
+O polimorfismo (do grego, "muitas formas") é a capacidade de um objeto assumir diferentes formas. Em termos práticos, permite que uma variável de um tipo base (superclasse) possa referenciar um objeto de um tipo derivado (subclasse). Isto é fundamental para tratar coleções de objetos diferentes de forma homogénea, como uma lista de \texttt{Tarefa} que contém objetos \texttt{Alimentacao} e \texttt{LimpezaJaula}.

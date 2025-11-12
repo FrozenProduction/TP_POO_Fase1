@@ -1,0 +1,62 @@
+% --- PREÂMBULO ---
+\documentclass[a4paper, 12pt]{article}
+
+% --- Pacotes Essenciais ---
+\usepackage[utf8]{inputenc}    % Acentuação correta
+\usepackage[T1]{fontenc}       % Fontes modernas
+\usepackage[portuguese]{babel} % Define o idioma para Português (PT-PT)
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry} % Margens
+
+% --- Pacotes para Gráficos e Imagens ---
+\usepackage{graphicx}          % Para incluir imagens
+\usepackage{float}             % Para controlar a posição das figuras (ex: [H])
+\graphicspath{ {imagens/} }    % Define a pasta padrão para as imagens
+
+% --- Cabeçalhos e Rodapés ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Limpa todos os campos
+\fancyfoot[C]{\thepage} % Número da página no centro do rodapé
+\renewcommand{\headrulewidth}{0.4pt} % Linha no cabeçalho
+\fancyhead[L]{Programação Orientada a Objetos}
+\fancyhead[R]{Fase 1}
+
+% --- Outros ---
+\usepackage{hyperref}          % Links clicáveis (para o índice e URLs)
+\usepackage{parskip}           % Espaço entre parágrafos em vez de indentação
+\usepackage{tocbibind}         % Adiciona Resumo e Índice ao Índice
+
+% --- FIM DO PREÂMBULO ---
+
+% --- DOCUMENTO ---
+\begin{document}
+
+% 1. Página de Capa
+\input{00_Capa.tex}
+
+% 2. Resumo
+\newpage
+\input{01_Resumo.tex}
+
+% 3. Índice
+\newpage
+\tableofcontents % Gera o Índice automaticamente
+\thispagestyle{empty} % Remove cabeçalho/rodapé da página do índice
+
+% 4. Corpo do Relatório
+\newpage
+\input{02_Introducao.tex}
+
+\newpage
+\input{03_Enquadramento.tex}
+
+\newpage
+\input{04_TrabalhoDesenvolvido.tex}
+
+\newpage
+\input{05_Conclusao.tex} %
+
+\newpage
+\input{06_GitHub.tex} %
+
+\end{document}

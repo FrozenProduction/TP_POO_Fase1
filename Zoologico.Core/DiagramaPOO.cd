@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Zoologico.Core.Alimentacao" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Alimentacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zoologico.Core.Animal" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABEAAAAQAQAAAAAAAAAgAAAAAAAAAAAAAACAEAAAA=</HashCode>
+      <FileName>Animal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zoologico.Core.AssistenciaVeterinaria" Collapsed="true">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAQACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AssistenciaVeterinaria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zoologico.Core.Ave" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Ave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zoologico.Core.Espetaculo" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQQAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Espetaculo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zoologico.Core.LimpezaJaula" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LimpezaJaula.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zoologico.Core.Mamifero" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Mamifero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zoologico.Core.Tarefa" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAAEAAA=</HashCode>
+      <FileName>Tarefa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zoologico.Core.Zoologico" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEABAAAAAAKAIAEAAgAAAAAQAAAAEAAAA=</HashCode>
+      <FileName>Zoologico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
